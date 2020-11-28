@@ -1,0 +1,9 @@
+export const GET_MOVIES = 'GET_MOVIES';
+export const GET_ERROR = 'GET_ERROR';
+export const CLEAR_FETCH = 'CLEAR_FETCH';
+export const GET_MOVIE_DETAILS = 'GET_MOVIE_DETAILS';
+export const SET_MOVIE_GENRE = 'SET_MOVIE_GENRE';
+export const GET_RANDOM_MOVIE = 'GET_RANDOM_MOVIE';
+export const CLEAR_MOVIES = 'CLEAR_MOVIES';
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
