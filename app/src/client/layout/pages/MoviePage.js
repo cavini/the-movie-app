@@ -1,12 +1,13 @@
-import React, { useContext, useEffect, Fragment } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import MovieContext from '../context/movieContext/movieContext'
+
 
 
 const MoviePage = () => {
     const movieContext = useContext(MovieContext);
 
-    const { getRandomMovie, randomMovie, error } = movieContext;
+    const { getRandomMovie, randomMovie } = movieContext;
 
     const history = useHistory();
     const onClick = () => {
@@ -16,7 +17,7 @@ const MoviePage = () => {
 
     useEffect(() => {
         getRandomMovie()
-
+        // eslint-disable-next-line
     }, []);
 
     const clicked = () => {
@@ -61,7 +62,13 @@ const MoviePage = () => {
 
 
 
-        </div> : <h1>teste</h1>))
+        </div> : <div className="movie-page">
+                <div className="movie-list-details">
+                    <div className="movie-item-details">
+                        <h2>Aguarde enquanto procuramos um filme.</h2>
+                    </div>
+                </div>
+            </div>))
 
 
 

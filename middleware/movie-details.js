@@ -50,7 +50,7 @@ router.post('/', async (req, res) => {
         const day = movie.data.release_date.slice(8, 11)
         movie.data.release_date = `${day}/${month}/${year}`
 
-        // Talvez eu precise usar JSON.parse() ou algum outro método para converter os dados q voltam do the movie db website
+
 
 
     }

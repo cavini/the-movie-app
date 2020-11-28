@@ -97,7 +97,7 @@ router.get('/api/random-movie', async (req, res) => {
         res.send(teste)
 
     } catch (err) {
-        console.log(`${err} NÃO DEU CERTO`);
+        console.log(err);
     }
 
 

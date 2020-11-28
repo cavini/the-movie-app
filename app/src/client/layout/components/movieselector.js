@@ -13,7 +13,7 @@ const MovieSelector = () => {
 
 
 
-    const { getMovies, movieGenre, randomMovie, getRandomMovie } = movieContext;
+    const { getMovies, movieGenre } = movieContext;
     const { setAlert } = alertContext;
 
     const [movie, setMovie] = useState({
