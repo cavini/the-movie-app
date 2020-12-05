@@ -250,7 +250,7 @@ footer {
 /* About page Styles */
 .about {
   margin-top: 4vh;
-  height: 88vh;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -796,6 +796,9 @@ footer {
   .about p {
     margin-bottom: 5vh;
   }
+  .icons {
+    height: auto;
+  }
   .icons i {
     margin: 0 5vw;
   }
@@ -810,11 +813,13 @@ footer {
     -ms-flex-line-pack: start;
         align-content: flex-start;
     margin-bottom: 4vh;
+    height: auto;
     width: 100%;
   }
   .footer-note .primary {
     -ms-flex-line-pack: center;
         align-content: center;
+    height: auto;
     width: 100%;
   }
   .footer-note img {

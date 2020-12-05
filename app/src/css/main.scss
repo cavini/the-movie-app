@@ -222,7 +222,7 @@ outline: none;
 /* About page Styles */
 .about {
   margin-top: 4vh;
-  height: 88vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -679,6 +679,10 @@ margin: 10px 0 0 10px;
       margin-bottom: 5vh;
   }
 
+  .icons {
+    height: auto;
+  }
+
   .icons i{
     margin: 0 5vw;
 }
@@ -688,12 +692,13 @@ margin: 10px 0 0 10px;
     flex-direction: column;
     align-content: flex-start;
     margin-bottom: 4vh;
+    height: auto;
     width: 100%;
 }
 
 .footer-note .primary {
     align-content: center;
-
+    height: auto;
     width: 100%;
 }
 
