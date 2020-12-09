@@ -51,7 +51,7 @@ const MoviePage = () => {
                                 return <span className="thin">{genre.name} </span>
                             })}</h4>
                             <h4>Release Date: {<span className="thin">{randomMovie.release_date}</span>}</h4>
-                            <h4>Runtime: {<span className="thin">{`${randomMovie.runtime} minutos`}</span>}</h4>
+                            <h4>Runtime: {<span className="thin">{`${randomMovie.runtime} minutes`}</span>}</h4>
                             <h4>Rating: {<span className="thin">{`${randomMovie.vote_average}/10 `}</span>}</h4>
                             <h4>{randomMovie.vote_count} {<span className="thin">users rated this movie.</span>}</h4>
                         </div>

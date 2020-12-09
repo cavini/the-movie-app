@@ -677,6 +677,8 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     width: auto;
+    height: auto;
+    margin: 0 0 1vh 0;
   }
   .language-settings i {
     margin: 0 2vw;
@@ -688,7 +690,8 @@ footer {
   .nav-links {
     position: absolute;
     right: 0px;
-    height: 92vh;
+    min-height: 92vh;
+    height: auto;
     top: 8vh;
     background-color: #ebe3d4;
     display: -webkit-box;
@@ -759,6 +762,7 @@ footer {
   }
   .content {
     height: 88vh;
+    width: auto;
     margin-bottom: 10vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -779,6 +783,7 @@ footer {
   }
   .primary {
     margin-top: 8vh;
+    width: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

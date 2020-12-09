@@ -16,9 +16,6 @@ const MovieItemState = (props) => {
 
     const changeLang = () => {
         if (state.lang === 'eng') {
-            console.log('language is eng')
-
-
             dispatch({ type: PORTUGUESE, payload: 'pt' });
 
         } else {

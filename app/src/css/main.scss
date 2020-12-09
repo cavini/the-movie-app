@@ -587,6 +587,8 @@ margin: 10px 0 0 10px;
     flex-direction: column;
     align-items: center;
     width: auto;
+    height: auto;
+    margin: 0 0 1vh 0;
   }
 
   .language-settings i {
@@ -600,7 +602,8 @@ margin: 10px 0 0 10px;
   .nav-links {
       position:absolute;
       right: 0px;
-      height: 92vh;
+      min-height: 92vh;
+      height: auto;
       top: 8vh;
       background-color:rgba(235, 227, 212, 1);
       display: flex;
@@ -653,6 +656,7 @@ margin: 10px 0 0 10px;
 
   .content {
       height: 88vh;
+      width: auto;
       margin-bottom: 10vh;
       display: flex;
       flex-direction: column;
@@ -666,6 +670,7 @@ margin: 10px 0 0 10px;
   
   .primary {
       margin-top: 8vh;
+      width: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
