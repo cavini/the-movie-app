@@ -63,7 +63,6 @@ text-decoration-style: none;
 
 .logo {
   list-style: none;
-  width: auto;
 }
 
 .logo a {
@@ -613,7 +612,6 @@ margin: 10px 0 0 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 100%;
       transform: translateX(100%);
       transition: transform 0.5s ease-in;
       justify-content: space-around !important;
@@ -674,7 +672,6 @@ margin: 10px 0 0 10px;
   
   .primary {
       margin-top: 8vh;
-      width: auto;
       display: flex;
       flex-direction: column;
       align-items: center;

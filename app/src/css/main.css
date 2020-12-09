@@ -66,7 +66,6 @@ nav {
 
 .logo {
   list-style: none;
-  width: auto;
 }
 
 .logo a {
@@ -706,7 +705,6 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
     -webkit-transition: -webkit-transform 0.5s ease-in;
@@ -764,7 +762,7 @@ footer {
   }
   .content {
     height: 88vh;
-    width: 100vw;
+    width: auto;
     margin-bottom: 10vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -785,7 +783,6 @@ footer {
   }
   .primary {
     margin-top: 8vh;
-    width: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
