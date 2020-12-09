@@ -1,6 +1,7 @@
-import React, { Fragment, useState, useContext } from 'react';
+import React, { Fragment, useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import MovieContext from '../context/movieContext/movieContext';
+import MovieItemContext from '../context/movieItemContext/movieItemContext';
 import AlertContext from '../context/alert/alertContext';
 
 const MovieSelector = () => {
@@ -8,11 +9,12 @@ const MovieSelector = () => {
 
 
     const movieContext = useContext(MovieContext);
+    const movieItemContext = useContext(MovieItemContext);
     const alertContext = useContext(AlertContext);
     const history = useHistory();
 
 
-
+    const { lang } = movieItemContext;
     const { getMovies, movieGenre } = movieContext;
     const { setAlert } = alertContext;
 
@@ -22,6 +24,9 @@ const MovieSelector = () => {
         certification: '',
         genre: '',
     });
+
+
+
 
     const { with_genres, sort_by, certification } = movie;
 
@@ -47,9 +52,14 @@ const MovieSelector = () => {
     const onSubmit = e => {
         e.preventDefault();
         if (certification === '' || sort_by === '' || with_genres === '') {
-            setAlert('Por favor preencha todos os campos', 'danger')
+            if (lang === 'eng') {
+                setAlert('Please fill in all fields', 'danger')
+            } else {
+                setAlert('Por favor preencha todos os campos', 'danger')
+            }
+
         } else {
-            getMovies(movie);
+            getMovies({ movie, lang });
         }
 
 
@@ -79,9 +89,52 @@ const MovieSelector = () => {
         <Fragment>
             <div className="content">
                 <div className="primary">
-                    <h1>O que você quer assistir hoje?</h1>
+                    {lang === 'eng' ? (<h1>What do you want to watch today?</h1>) : (<h1>O que você quer assistir hoje?</h1>)}
 
-                    <form className="botoes" onSubmit={onSubmit}>
+                    {lang === 'eng' ? (<form className="botoes" onSubmit={onSubmit}>
+                        <label>Genre</label>
+                        <select className="select-css" name="with_genres" onClick={onClick} onChange={onChange} >
+                            <option value="0">Select</option>
+                            <option value="28" name="Action" className="active">Action</option>
+                            <option value="12" name="Adventure">Adventure</option>
+                            <option value="16" name="Animation">Animation</option>
+                            <option value="35" name="Comedy">Comedy</option>
+                            <option value="80" name="Crime">Crime</option>
+                            <option value="99" name="Documentary">Documentary</option>
+                            <option value="18" name="Drama">Drama</option>
+                            <option value="10751" name="Family">Family</option>
+                            <option value="14" name="Fantasy">Fantasy</option>
+                            <option value="36" name="History">History</option>
+                            <option value="27" name="Horror">Horror</option>
+                            <option value="10402" name="Musicals">Musicals</option>
+                            <option value="9648" name="Mystery">Mystery</option>
+                            <option value="10749" name="Romance">Romance</option>
+                            <option value="878" name="Sci-fi">Sci-fi</option>
+                            <option value="10752" name="War">War</option>
+                            <option value="37" name="Wild-West">Wild-West</option>
+                        </select>
+                        <label>Sort By</label>
+                        <select className="select-css" name="sort_by" onChange={onChange}>
+                            <option value="0">Select</option>
+                            <option value="popularity.desc">Most Popular</option>
+                            <option value="popularity.asc">Least Popular</option>
+                            <option value="vote_average.desc">Highest Ratings</option>
+                            <option value="vote_average.asc">Lowest Ratings</option>
+                            <option value="vrevenue.desc">Biggest Revenue</option>
+                            <option value="primary_release_date.desc">Most Recent</option>
+                            <option value="primary_release_date.asc">Oldest</option>
+                        </select>
+                        <label>Content Rating</label>
+                        <select className="select-css" name="certification" onChange={onChange}>
+                            <option value="0">Select</option>
+                            <option value="G">G</option>
+                            <option value="PG-13">PG-13</option>
+                            <option value="R">R</option>
+                            <option value="NC-17">NC-17</option>
+                            <option value="PG">PG</option>
+                        </select>
+                        <button><i className="fas fa-search"></i></button>
+                    </form>) : (<form className="botoes" onSubmit={onSubmit}>
                         <label>Gênero</label>
                         <select className="select-css" name="with_genres" onClick={onClick} onChange={onChange} >
                             <option value="0">Selecione</option>
@@ -125,10 +178,14 @@ const MovieSelector = () => {
                             <option value="18">18+</option>
                         </select>
                         <button><i className="fas fa-search"></i></button>
-                    </form>
+                    </form>)}
+
                 </div>
-                <div className="random-search"><h2>Não sei, qualquer coisa serve!</h2>
-                    <button onClick={getRandomGenre}>Aleatório <i className="fas fa-random"></i></button></div>
+                {lang === 'eng' ? (<div className="random-search"><h2>I don't know! Get me a Random Movie!</h2>
+                    <button onClick={getRandomGenre}>
+                        <i className="fas fa-random"></i></button></div>) : (<div className="random-search"><h2>Não sei, qualquer coisa serve!</h2>
+                            <button onClick={getRandomGenre}>Aleatório <i className="fas fa-random"></i></button></div>)}
+
 
             </div>
         </Fragment>

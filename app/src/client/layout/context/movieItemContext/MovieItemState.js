@@ -1,20 +1,38 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
-import { GET_MOVIE_DETAILS, GET_ERROR } from '../../../../types';
+import { GET_MOVIE_DETAILS, GET_ERROR, PORTUGUESE, ENGLISH } from '../../../../types';
 import MovieItemReducer from '../movieItemContext/movieItemReducer';
 import MovieItemContext from '../movieItemContext/movieItemContext';
 
 const MovieItemState = (props) => {
     const initialState = {
         movieDetails: null,
+        lang: 'eng',
         error: null
 
     };
 
     const [state, dispatch] = useReducer(MovieItemReducer, initialState);
 
+    const changeLang = () => {
+        if (state.lang === 'eng') {
+            console.log('language is eng')
 
-    const getMovieDetails = async (movie) => {
+
+            dispatch({ type: PORTUGUESE, payload: 'pt' });
+
+        } else {
+            dispatch({ type: ENGLISH, payload: 'eng' });
+        }
+
+
+
+
+
+    }
+
+
+    const getMovieDetails = async (obj) => {
 
         const config = {
             headers: {
@@ -24,7 +42,7 @@ const MovieItemState = (props) => {
 
 
         try {
-            const res = await axios.post('/api/movie/details', movie, config)
+            const res = await axios.post('/api/movie/details', obj, config)
 
 
 
@@ -48,6 +66,8 @@ const MovieItemState = (props) => {
     return (
         <MovieItemContext.Provider value={{
             movieDetails: state.movieDetails,
+            lang: state.lang,
+            changeLang,
             getMovieDetails
         }}>
             {props.children}

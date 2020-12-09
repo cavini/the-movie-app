@@ -9,7 +9,7 @@ const Movieitem = ({ movie }) => {
     const movieItemContext = useContext(MovieItemContext);
 
 
-    const { getMovieDetails } = movieItemContext;
+    const { getMovieDetails, lang } = movieItemContext;
 
 
     if (!movie.release_date.includes("/")) {
@@ -28,8 +28,7 @@ const Movieitem = ({ movie }) => {
     }
 
     const onClick = async () => {
-        await getMovieDetails(movie);
-
+        await getMovieDetails({ movie, lang });
         redirect();
 
 
@@ -42,30 +41,56 @@ const Movieitem = ({ movie }) => {
 
 
 
+    if (lang === 'eng') {
+        return (
+            <div className="movie-item">
+                <h2>{movie.title}</h2>
+                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={`${movie.title} movie poster`} />
+                {/* <h3>Sinopse:</h3>
+                <p>{movie.overview}</p> */}
 
-    return (
-        <div className="movie-item">
-            <h2>{movie.title}</h2>
-            <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={`Poster do filme ${movie.title}`} />
-            {/* <h3>Sinopse:</h3>
-            <p>{movie.overview}</p> */}
-
-            {movie.overview ? (
-                <><h3>{"Sinopse:"}</h3><p>{movie.overview}</p></>) : <p>Não foi possível encontrar a sinopse deste filme.</p>}
-
-
-            {movie.vote_average !== 0 ?
-                (<h4>Nota: {<span className="thin">{`${movie.vote_average}/10`}</span>}</h4>) : <h4>Sem nota</h4>}
-            {movie.release_date ? (
-                <h4>Data de Lançamento: {<span className="thin">{movie.release_date}</span>}</h4>) : <h4><span className="thin">Data de lançamento indisponível</span></h4>}
+                {movie.overview ? (
+                    <><h3>{"Synopsis:"}</h3><p>{movie.overview}</p></>) : <p>Couldn't find this movie's synopsis.</p>}
 
 
+                {movie.vote_average !== 0 ?
+                    (<h4>Rating: {<span className="thin">{`${movie.vote_average}/10`}</span>}</h4>) : <h4>Not Available</h4>}
+                {movie.release_date ? (
+                    <h4>Release date: {<span className="thin">{movie.release_date}</span>}</h4>) : <h4><span className="thin">Not Available</span></h4>}
 
-            <a className="ver-mais" onClick={onClick}>Ver mais</a>
-            <a className="ver-sinopse" onClick={onClick}>Ver sinopse completa</a>
 
-        </div>
-    )
+
+                <a className="ver-mais" onClick={onClick}>See more</a>
+                <a className="ver-sinopse" onClick={onClick}>See full synopsis</a>
+
+            </div>
+        )
+    } else {
+        return (
+            <div className="movie-item">
+                <h2>{movie.title}</h2>
+                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={`Poster do filme ${movie.title}`} />
+                {/* <h3>Sinopse:</h3>
+                <p>{movie.overview}</p> */}
+
+                {movie.overview ? (
+                    <><h3>{"Sinopse:"}</h3><p>{movie.overview}</p></>) : <p>Não foi possível encontrar a sinopse deste filme.</p>}
+
+
+                {movie.vote_average !== 0 ?
+                    (<h4>Nota: {<span className="thin">{`${movie.vote_average}/10`}</span>}</h4>) : <h4>Sem nota</h4>}
+                {movie.release_date ? (
+                    <h4>Data de Lançamento: {<span className="thin">{movie.release_date}</span>}</h4>) : <h4><span className="thin">Data de lançamento indisponível</span></h4>}
+
+
+
+                <a className="ver-mais" onClick={onClick}>Ver mais</a>
+                <a className="ver-sinopse" onClick={onClick}>Ver sinopse completa</a>
+
+            </div>
+        )
+    }
+
 
 }
 

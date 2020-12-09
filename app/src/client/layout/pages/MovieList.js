@@ -3,6 +3,7 @@ import React, { Fragment, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import MovieItem from '../components/MovieItem';
 import MovieContext from '../context/movieContext/movieContext';
+import MovieItemContext from '../context/movieItemContext/movieItemContext';
 
 
 
@@ -12,6 +13,10 @@ const MovieList = () => {
     const history = useHistory();
 
     const movieContext = useContext(MovieContext);
+
+    const movieItemContext = useContext(MovieItemContext)
+
+    const { lang } = movieItemContext;
 
 
 
@@ -27,10 +32,12 @@ const MovieList = () => {
     }
 
     if (movies) {
+
         return (
             <main>
+
                 <div className="movie-page">
-                    <Fragment>{movies.length > 0 ? (<h1>Encontramos estes filmes de {movieGenre} para você!</h1>) : <h2>Não encontramos nenhum filme com essa combinação, quer tentar novamente?</h2>}</Fragment>
+                    <Fragment>{lang === 'eng' ? (<h1>Found these {movieGenre} movies for you!</h1>) : <h1>Encontramos estes filmes de {movieGenre} para você!</h1>}</Fragment>
                     <div className="movie-list">
 
 

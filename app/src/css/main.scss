@@ -39,7 +39,7 @@ nav {
 .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 25vw;
+  width: 45vw;
   list-style: none;
 }
 
@@ -63,12 +63,32 @@ text-decoration-style: none;
 
 .logo {
   list-style: none;
+  width: auto;
 }
 
 .logo a {
   text-decoration: none;
   font-size: 1.6rem;
   color: rgb(4, 20, 255);
+}
+
+.language-settings {
+  display: flex;
+  width: auto;
+}
+
+.language-settings i {
+  color: rgb(4, 20, 255);
+  margin: 0 0 0 2vw;
+}
+
+.language-settings button {
+  background-color: rgb(235, 227, 212);
+  font-weight: 400;
+  font-size: 0.8rem;
+  width: 90px;
+  align-self: center;
+  margin: 0 2vw;
 }
 
 .burger {
@@ -236,6 +256,13 @@ outline: none;
   align-self: flex-start;
   text-align: left;
 }
+
+.about a {
+  text-decoration: none;
+  color: #fd0008;
+}
+
+
 
 .icons {
   margin-bottom: 15vh;
@@ -553,6 +580,17 @@ margin: 10px 0 0 10px;
       padding: 0 4vw;
       background-color: rgba(235, 227, 212, 1);
       margin-bottom: 1vh !important;
+  }
+
+  .language-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  .language-settings i {
+    margin: 0 2vw;
   }
   .burger {
       display: block;

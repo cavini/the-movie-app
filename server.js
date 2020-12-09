@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 );
 
 
-app.get('/api/random-movie', require('./middleware/random-movie'));
+app.post('/api/random-movie', require('./middleware/random-movie'));
 
 
 

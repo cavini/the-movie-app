@@ -7,3 +7,5 @@ export const GET_RANDOM_MOVIE = 'GET_RANDOM_MOVIE';
 export const CLEAR_MOVIES = 'CLEAR_MOVIES';
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
+export const PORTUGUESE = 'PORTUGUESE';
+export const ENGLISH = 'ENGLISH';

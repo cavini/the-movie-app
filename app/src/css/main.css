@@ -42,7 +42,7 @@ nav {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 25vw;
+  width: 45vw;
   list-style: none;
 }
 
@@ -66,12 +66,36 @@ nav {
 
 .logo {
   list-style: none;
+  width: auto;
 }
 
 .logo a {
   text-decoration: none;
   font-size: 1.6rem;
   color: #0414ff;
+}
+
+.language-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+}
+
+.language-settings i {
+  color: #0414ff;
+  margin: 0 0 0 2vw;
+}
+
+.language-settings button {
+  background-color: #ebe3d4;
+  font-weight: 400;
+  font-size: 0.8rem;
+  width: 90px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 0 2vw;
 }
 
 .burger {
@@ -273,6 +297,11 @@ footer {
   -ms-flex-item-align: start;
       align-self: flex-start;
   text-align: left;
+}
+
+.about a {
+  text-decoration: none;
+  color: #fd0008;
 }
 
 .icons {
@@ -635,6 +664,22 @@ footer {
     padding: 0 4vw;
     background-color: #ebe3d4;
     margin-bottom: 1vh !important;
+  }
+  .language-settings {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: auto;
+  }
+  .language-settings i {
+    margin: 0 2vw;
   }
   .burger {
     display: block;

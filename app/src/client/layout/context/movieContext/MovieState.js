@@ -1,6 +1,7 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useContext } from 'react'
 import axios from 'axios'
 import MovieContext from './movieContext'
+import MovieItemContext from '../../context/movieItemContext/movieItemContext'
 import { GET_ERROR, GET_MOVIES, SET_MOVIE_GENRE, GET_RANDOM_MOVIE, CLEAR_MOVIES } from '../../../../types'
 import movieReducer from './movieReducer';
 
@@ -18,13 +19,16 @@ const MovieState = (props) => {
 
     const [state, dispatch] = useReducer(movieReducer, initialState);
 
+    const movieItemContext = useContext(MovieItemContext);
+
+    const { lang } = movieItemContext;
 
 
 
 
 
-    const getMovies = async (movie) => {
-        const { genre } = movie;
+    const getMovies = async (obj) => {
+        const { genre } = obj.movie;
 
         const config = {
             headers: {
@@ -33,7 +37,7 @@ const MovieState = (props) => {
         }
 
         try {
-            const res = await axios.post('/api/movies', movie, config)
+            const res = await axios.post('/api/movies', obj, config)
 
 
 
@@ -52,14 +56,18 @@ const MovieState = (props) => {
         dispatch({ type: CLEAR_MOVIES })
     }
 
-    const getRandomMovie = async () => {
+    const getRandomMovie = async (language) => {
 
-
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
 
         try {
 
 
-            const res = await axios.get('/api/random-movie')
+            const res = await axios.post('/api/random-movie', language, config)
 
 
             dispatch({ type: GET_RANDOM_MOVIE, payload: res.data });
