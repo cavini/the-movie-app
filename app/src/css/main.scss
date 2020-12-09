@@ -571,7 +571,7 @@ margin: 10px 0 0 10px;
   nav {
       z-index: 9999;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       height: 8vh;
       position: fixed;
@@ -593,6 +593,10 @@ margin: 10px 0 0 10px;
 
   .language-settings i {
     margin: 0 2vw;
+  }
+
+  .language-settings button {
+    margin: 0 0 4vh 0;
   }
   .burger {
       display: block;
@@ -656,7 +660,7 @@ margin: 10px 0 0 10px;
 
   .content {
       height: 88vh;
-      width: auto;
+      width: 100vw;
       margin-bottom: 10vh;
       display: flex;
       flex-direction: column;

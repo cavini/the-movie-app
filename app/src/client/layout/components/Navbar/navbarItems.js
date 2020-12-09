@@ -39,7 +39,7 @@ const NavbarItems = () => {
             <ul className={active ? "nav-active" : "nav-links"}>
                 {lang === 'eng' ? (<Fragment><li onClick={onClick}><Link to='/'>Home</Link></li>
                     <li onClick={onClick}><Link to='/about'>About</Link></li>
-                    <div className="language-settings"><i class="fas fa-language fa-2x"> </i><button onClick={checkAndSetLang}>PT</button></div>
+                    <div className="language-settings"><i class="fas fa-language fa-2x"></i><button onClick={checkAndSetLang}>PT</button></div>
                 </Fragment>) : (<Fragment><li onClick={onClick}><Link to='/'>Início</Link></li>
                     <li onClick={onClick}><Link to='/about'>Sobre</Link></li>
                     <div className="language-settings"><i class="fas fa-language fa-2x"></i> <button onClick={checkAndSetLang}>ENG</button></div></Fragment>)}
