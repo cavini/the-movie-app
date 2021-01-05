@@ -9,7 +9,7 @@ const Footer = () => {
         return (
             <footer>
                 <div className="footer">
-                    <p>Recommend me a Movie - 2020</p>
+                    <p>Recommend me a Movie - 2021</p>
                 </div>
             </footer>
         )
@@ -17,7 +17,7 @@ const Footer = () => {
         return (
             <footer>
                 <div className="footer">
-                    <p>Me Recomende um Filme - 2020</p>
+                    <p>Me Recomende um Filme - 2021</p>
                 </div>
             </footer>
         )
