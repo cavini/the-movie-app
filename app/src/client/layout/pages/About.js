@@ -40,8 +40,7 @@ If you want to check out the code for this app on GitHub, the link is right belo
 
                             <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">
                                 <img src={"https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg"} alt="The movie database logo" />  </a>
-                            <p className="block">This product uses the TMDb API but is not endorsed or certified by TMDb.
-                            Todas as informações sobre os filmes são fornecidas pela API e seus colaboradores.</p>
+                            <p className="block">This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
                             <p>Design and programming by Arthur Cavini</p>
 
 
